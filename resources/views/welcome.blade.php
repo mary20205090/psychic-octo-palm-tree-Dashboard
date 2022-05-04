@@ -218,26 +218,38 @@
 {{-- new main content --}}
 <div class="main-content">
     <div class="row">
-        <div class="col-md-12 text-centre">
-            <table class="table table-success table-striped">
+        <div class="col-md-8 text-centre">
+            <table class="table table-warning table-striped">
   
                 <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <a href="adddoctor"><button scope="col" type="submit"> +  Add Doctor</button></a> 
+                  <th scope="col">Department</th>
+                  <th scope="col">Operations</th>
 
+
+
+                  <a href="adduser"><button scope="col" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    Add User</button></a> 
 
                 </tr>
               </thead>
               <tbody>
-                  @foreach ($doctors as $item )
+                  @foreach ($users as $item )
                       
                 <tr>
                   <th scope="row">{{ $item['id'] }}</th>
                   <td>{{ $item['name'] }}</td>
                   <td>{{ $item['email']}}</td>
+                  <td>{{ $item['department']}}</td>
+                  <td>
+                    <a href="{{"delete1/". $item['id'] }}">DELETE</a>
+                    <a href="{{"edit1/". $item['id'] }}">EDIT</a>
+
+                  </td>
+
                 </tr>
                 @endforeach
 

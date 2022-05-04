@@ -218,15 +218,17 @@
 {{-- new main content --}}
 <div class="main-content">
     <div class="row">
-        <div class="col-md-12 text-centre">
-            <table class="table table-success table-striped">
+        <div class="col-md-8 text-centre">
+            <table class="table table-light table-striped">
   
                 <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <a href="addstaff"><button scope="col" type="submit"> +  Add NonStuff</button></a> 
+                  <th>Operations</th>
+                  <a href="addstaff"><button scope="col" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    Add NonStuff</button></a> 
 
                 </tr>
               </thead>
@@ -237,6 +239,12 @@
                   <th scope="row">{{ $item['id'] }}</th>
                   <td>{{ $item['name'] }}</td>
                   <td>{{ $item['email']}}</td>
+                  <td>
+                    <a href="{{"delete/". $item['id'] }}">DELETE</a>
+                    <a href="{{"edit/". $item['id'] }}">EDIT</a>
+
+                  </td>
+
                 </tr>
                 @endforeach
 

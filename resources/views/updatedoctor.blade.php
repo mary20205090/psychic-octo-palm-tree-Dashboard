@@ -23,9 +23,9 @@
         height: 400px;
         width: auto;
         }
-        h1{
-            color: white;
-        }
+    h1{
+        color: white;
+    }
 
 </style>
 <body>
@@ -34,17 +34,17 @@
     <div class="container ">
     <div class="row">
         <div class="col-sm-12 col-md-9 mx-auto">
-            <form  method="POST" action="addstaff">
+            <form  method="POST" action="/edit2">
                 @csrf
                 <div class="card bg-light">
                     <div class="card-header bg-secondary">
-                        <h1> Add Non-staff</h1>
+                        <h1> Edit Doctor</h1>
                     </div>
                     <div class="card-body">
-                        <input type="hidden" name="id" placeholder="Enter name"> <br> <br>
-                        <input type="text" name="name" placeholder="Enter name"> <br> <br>
-                        <input type="text" name="email" placeholder="Enter email"> <br> <br>
-                        <button type="submit">Add Staff</button>
+                        <input type="hidden" name="id"  value="{{ $daktari['id'] }}"> <br> <br>
+                        <input type="text" name="name"  value="{{ $daktari['name'] }}"> <br> <br>
+                        <input type="text" name="email"  value="{{ $daktari['email'] }}"> <br> <br>
+                        <button type="submit">Edit Users</button>
                                         
                     </div>
                 </div>

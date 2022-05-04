@@ -218,15 +218,18 @@
 {{-- new main content --}}
 <div class="main-content">
     <div class="row">
-        <div class="col-md-12 text-centre">
-            <table class="table table-success table-striped">
+        <div class="col-md-8 text-centre">
+            <table class="table table-secondary table-striped">
   
                 <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <a href="addnurse"><button scope="col" type="submit"> +  Add Nurse</button></a> 
+                  <th scope="col">Operations</th>
+                  <a href="addnurse"><button scope="col" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    Add Nurse</button></a> 
+                    
 
                 </tr>
               </thead>
@@ -237,6 +240,10 @@
                   <th scope="row">{{ $item['id'] }}</th>
                   <td>{{ $item['name'] }}</td>
                   <td>{{ $item['email']}}</td>
+                  <td>
+                    <a href="{{"delete3/". $item['id'] }}">DELETE</a>
+                    <a href="{{"edit3/". $item['id'] }}">EDIT</a>
+                  </td>
                 </tr>
                 @endforeach 
 

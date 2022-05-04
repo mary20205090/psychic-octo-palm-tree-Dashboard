@@ -26,4 +26,37 @@ class NurseController extends Controller
 
 
     }
+    function delete($id)
+    {
+        $att=Nurse::find($id);
+        $att->delete();
+        return redirect('viewnurses');
+
+    }
+    function editNurse($id)
+    {
+        $att= Nurse::find($id);
+        return view('updatenurse',['att'=>$att]); 
+    }
+
+    function updateNurse(Request $req)
+    {
+        // dd($req->all());
+        $att = Nurse::find($req->id);
+        $att->name=$req->name;
+        $att->email=$req->email;
+        $att->save();
+        return redirect('viewnurses');
+
+
+        // return $req->input();
+
+     
+        
+        
+    }
+
+
+    
+
 }

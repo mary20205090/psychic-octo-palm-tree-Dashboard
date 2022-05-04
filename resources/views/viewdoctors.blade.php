@@ -219,32 +219,32 @@
 <div class="main-content">
     <div class="row">
         <div class="col-md-8 text-centre">
-            <table class="table table-info table-striped">
+            <table class="table table-danger table-striped">
   
                 <thead>
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Name</th>
                   <th scope="col">Email</th>
-                  <th>Operations</th>
-                  <a href="addpatient"><button scope="col" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                    Add Patient</button></a> 
+                  <th scope="col">Operations</th>
+                  <a href="adddoctor"><button scope="col" type="submit"> <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    Add Doctor</button></a> 
 
                 </tr>
               </thead>
               <tbody>
-                  @foreach ($patients as $item )
+                 
+                @foreach ($doctors as $item )
                       
                 <tr>
                   <th scope="row">{{ $item['id'] }}</th>
                   <td>{{ $item['name'] }}</td>
                   <td>{{ $item['email']}}</td>
                   <td>
-                    <a href="{{"delete4/". $item['id'] }}">DELETE</a>
-                    <a href="{{"edit4/". $item['id'] }}">EDIT</a>
+                    <a href="{{"delete2/". $item['id'] }}">DELETE</a>
+                    <a href="{{"edit2/". $item['id'] }}">EDIT</a>
 
                   </td>
-
                 </tr>
                 @endforeach
 
